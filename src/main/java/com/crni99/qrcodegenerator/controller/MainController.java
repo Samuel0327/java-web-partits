@@ -29,7 +29,7 @@ public class MainController {
 	@PostMapping("/generate")
 	public String generateQRCode(@RequestParam("text") String text, Model model,
 			RedirectAttributes redirectAttributes) {
-		if (text == null || text.isBlank() || text.isEmpty()) {
+		if (text == null || text.isEmpty()) {
 			return "redirect:/";
 		}
 		String qrCode = qrCodeService.getQRCode(text);
